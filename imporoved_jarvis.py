@@ -7,7 +7,7 @@ import os
 import time
 import keyboard
 import logging
-
+import openai
 # -------------------- Configuration --------------------
 ASSISTANT_NAME = "edith"   # Change as desired
 GREET_USER = True                   # Option to greet user on start
@@ -67,6 +67,33 @@ def take_command() -> str:
         logging.error(f"Recognition error: {e}")
         speak("An error occurred while recognizing your speech.")
         return ""
+
+# ---------------------chatgpt------------------------------
+
+def handle_chatgpt():
+    openai.api_key = ""  # replace with your actual key
+    speak("Chat mode activated. Say 'exit chat' to stop chatting.")
+    while True:
+        query = take_command()
+        if query in ("exit chat", "stop chat", "quit chat"):
+            speak("Exiting chat mode.")
+            break
+        if query:
+            try:
+                response = openai.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[
+                        {"role": "system", "content": f"You are {ASSISTANT_NAME}, a helpful AI assistant."},
+                        {"role": "user", "content": query}
+                    ],
+                    max_tokens=300,
+                    temperature=1,
+                )
+                reply = response.choices[0].message.content.strip()
+                speak(reply)
+            except Exception as e:
+                logging.error(f"ChatGPT API error: {e}")
+                speak("Sorry, I am unable to answer that right now.")
 
 # -------------------- Command Handlers --------------------
 def handle_wikipedia(query: str):
@@ -170,6 +197,8 @@ def process_query(query: str) -> bool:
         handle_type(query)
     elif "help" in query:
         handle_help()
+    elif "start chat" in query:
+        handle_chatgpt()
     elif "stop" in query or "exit" in query or "quit" in query:
         speak("Stopping all functions. Goodbye!")
         return False  # Stop running
