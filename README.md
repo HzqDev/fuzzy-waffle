@@ -31,7 +31,10 @@ A lightweight, Python-based voice assistant that listens to your voice commands 
 ✅ Perform system-level tasks  
 ✅ User-friendly and beginner-friendly code structure  
 
----
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ** ✨New_upgrade**
+now i have also started working on webdevelopement and new files inluding both Python and HTML/CSS will uploaded here
+
 
 ## 🛠️ Installation
 
@@ -41,9 +44,6 @@ A lightweight, Python-based voice assistant that listens to your voice commands 
 git clone https://github.com/HzqDev/fuzzy-waffle.git
 cd fuzzy-waffle
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-** ✨New_upgrade**
-now i have also started working on webdevelopement and new files inluding both Python and HTML/CSS will uploaded here
 
 
 
