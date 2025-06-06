@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="SURVEY_STYLE.css" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">This is a survey form made by Haziq.</p>
+
+    <form id="survey-form" method="post" action="https://register-demo.freecodecamp.org">
+      
+      <fieldset>
+        <label id="name-label" for="name">Enter your name:
+          <input id="name" type="text" placeholder="John Doe" required />
+        </label>
+
+        <label id="email-label" for="email">Enter your email:
+          <input id="email" type="email" placeholder="abc@gmail.com" required />
+        </label>
+
+        <label id="number-label" for="number">Enter your number:
+          <input id="number" type="number" placeholder="000000000" min="900000000" max="999999999" required />
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <label for="dropdown">What food do you like?
+          <select id="dropdown">
+            <option value="1">Others</option>
+            <option value="2">Pasta</option>
+            <option value="3">Pizza</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What is your gender?</legend>
+        <label>
+          <input type="radio" name="gender" value="male" checked /> Male
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" /> Female
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What sports do you like?</legend>
+        <label>
+          <input type="checkbox" value="cricket" /> Cricket
+        </label>
+        <label>
+          <input type="checkbox" value="football" /> Football
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <label for="comments">
+            <legend> additional comments:</legend>
+          <textarea id="comments" placeholder="Write your comments here..."></textarea>
+        </label>
+      </fieldset>
+
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
