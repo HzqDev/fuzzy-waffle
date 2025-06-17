@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="practice.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="login-box">
+            <form id="loginForm" action="gallery.html" method="get">
+                <h2>
+                    Login
+                </h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="password" required>
+                    <label for="">Password</label>
+                </div>
+                <button id="loginBtn" onclick="window.location.href='gallery.html'" type="submit" disabled>Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const loginBtn = document.getElementById('loginBtn');
+
+        function checkInputs() {
+            loginBtn.disabled = !(email.value.trim() && password.value.trim());
+        }
+
+        email.addEventListener('input', checkInputs);
+        password.addEventListener('input', checkInputs);
+    </script>
+</body>
+</html>
